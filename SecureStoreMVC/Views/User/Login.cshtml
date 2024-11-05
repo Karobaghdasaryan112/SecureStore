@@ -1,0 +1,29 @@
+﻿@model SecureStore.API.DTOs.UserDTOs.UserLoginModel;
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <link rel="stylesheet" href="~/css/login.css">
+    <title>Вход</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Добро пожаловать!</h1>
+        <h2>Вход в систему</h2>
+        <form id="loginForm" action="UserLogin" method="post">
+            <div class="form-group">
+                <label for="username">Имя пользователя:</label>
+                <input type="text" id="username" placeholder="Введите имя пользователя" name="UserName" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Пароль:</label>
+                <input type="password" id="password" placeholder="Введите пароль" name="Password" required>
+            </div>
+            <button type="submit">Войти</button>
+            <p>Нет аккаунта? <a href="RegistrationView">Зарегистрируйтесь</a></p>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+﻿@model SecureStore.API.DTOs.UserDTOs.UserProfileModel;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/profile.css">
+    <title>Profile Page</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>My Store</h1>
+            <nav>
+                <ul>
+                    <li><a href="@Url.Action("ProductsView","Product")">Products</a></li>
+                    <li><a href="@Url.Action("OrdersView", "Cart")">Shopping Cart</a></li>
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="profile">
+        <h2>User Profile</h2>
+        <div class="profile-info">
+            <p><strong>Имя:</strong> <span id="profileFirstName">@ViewData["FirstName"]</span></p>
+            <p><strong>Фамилия:</strong> <span id="profileLastName">@ViewData["LastName"]</span></p>
+            <p><strong>Электронная почта:</strong> <span id="profileEmail">@ViewData["Email"]</span></p>
+            <button onclick="editProfile()">Редактировать профиль</button>
+        </div>
+        <button>Edit Profile</button>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My Store. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+
+

@@ -1,0 +1,37 @@
+﻿@model List<SecureStore.MVC.UserDTOs.OrderModel>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/cart.css">
+    <title>Корзина</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Корзина</h1>
+        <table id="cartTable">
+            @{
+                foreach (var order in Model)
+                {
+                    foreach(var item in order.LineItems){
+                    <thead>
+                        <tr>
+                    <th>@item.Product.Name</th>
+                    <th>@item.Quantity</th>
+                    <th>@item.Product.StandardCost</th>
+                    <th>@item.Quantity * @item.Product.StandardCost</th>
+                    <th>Действия</th>
+                </tr>
+            </thead>
+                    }
+            }
+            }
+            <tbody>
+            </tbody>
+        </table>
+        <button onclick="checkout()">Оформить заказ</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
